@@ -3,23 +3,33 @@ import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
   margin: 2rem 0px;
-`;
-const StyledContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  border: 1px solid #aaa;
+  bos-sizing: border-box;
+  li {
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 1rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #aaa;
+    &:nth-child(even) {
+      background-color: #ddd;
+    }
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
 `;
 const StyledTitle = styled.div`
-  font-weight: 700;
   margin-right: 1rem;
 `;
 const StyledResource = styled.div`
   color: #fff;
   background-color: ${props => props.color}
-  padding: 3px;
+  padding: 3px 6px;
   box-sizing: border-box;
   font-size: 12px;
-  font-weight: 700;
   text-transform: uppercase;
   border-radius: 3px;
   margin: .5rem .5rem .5rem 0px;
@@ -28,7 +38,7 @@ const Resources = ({resources}) => {
   return (
    <StyledWrapper>
     {resources && resources.map(value => (
-      <StyledContainer key={value.name}>
+      <li key={value.name}>
         <StyledTitle>
           {value.name}
         </StyledTitle>
@@ -58,7 +68,7 @@ const Resources = ({resources}) => {
             {string}
           </StyledResource>
         ))}
-      </StyledContainer>
+      </li>
     ))}
    </StyledWrapper>
   )

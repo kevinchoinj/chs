@@ -5,21 +5,27 @@ import Element from 'pages/Element';
 import Navigation from 'components/Navigation';
 import {ElementsProvider} from 'contexts/ElementsContext';
 import {themeData} from 'data/themeData';
-import {ThemeProvider} from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import 'App.css';
+
+const StyledWrapper = styled.div`
+  padding-top: 40px;
+`;
 
 const App = () => {
   return (
     <ThemeProvider theme={themeData}>
       <ElementsProvider>
         <Navigation/>
-        <Switch>
-          <Route 
-            exact path="/elements/api-v2/elements/:id" 
-            render={props => <Element {...props}/>}
-          />
-          <Route path="/" render={props => <Home {...props}/>}/>
-        </Switch>
+        <StyledWrapper>
+          <Switch>
+            <Route 
+              exact path="/elements/api-v2/elements/:id" 
+              render={props => <Element {...props}/>}
+            />
+            <Route path="/" render={props => <Home {...props}/>}/>
+          </Switch>
+        </StyledWrapper>
       </ElementsProvider>
     </ThemeProvider>
   );

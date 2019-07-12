@@ -26,7 +26,77 @@ export const elementData = [
           'delete',
           'get by ID',
         ]
-      }
+      },
+      {
+        name: 'attachmentsMetadata',
+        actions: [
+          'get',
+        ]
+      },
+      {
+        name: 'authValidation',
+        actions: [
+          'get',
+        ]
+      },
+      {
+        name: 'bulk',
+        actions: [
+          'get by ID',
+          'post'
+        ]
+      },
+      {
+        name: 'bulkCancel',
+        actions: [
+          'put',
+        ]
+      },
+      {
+        name: 'bulkQuery',
+        actions: [
+          'post',
+        ]
+      },
+      {
+        name: 'bulkStatus',
+        actions: [
+          'get',
+        ]
+      },
+      {
+        name: 'contacts',
+        actions: [
+          'delete',
+          'get',
+          'get by ID',
+          'post',
+        ]
+      },
+      {
+        name: 'fields',
+        actions: [
+          'get',
+          'post',
+        ]
+      },
+      {
+        name: 'fields',
+        actions: [
+          'get',
+          'get by ID',
+        ]
+      },
+      {
+        name: 'incidentTypes',
+        actions: [
+          'delete',
+          'get',
+          'get by ID',
+          'patch',
+          'post',
+        ]
+      },
     ]
   },
   {

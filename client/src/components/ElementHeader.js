@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledWrapper = styled.div`
   margin: ${props => `${props.theme.spacingLarge} 0px`};
   display: flex;
+  align-items: center;
 `;
 const Image = ({className, src}) => (
   <img src={src} alt="" className={className}/>
@@ -22,6 +23,9 @@ const StyledHeader = styled.div`
   font-weight: 700;
   margin-bottom: ${props => props.theme.spacingMedium};
 `;
+const StyledBody = styled.div`
+  line-height: ${props => props.theme.lineHeightMedium};
+`;
 const Features = ({
   name,
   image,
@@ -34,12 +38,14 @@ const Features = ({
       <StyledHeader>
         {name}
       </StyledHeader>
-      <div>
-      Authentication Types: {authTypes && authTypes.join(', ')}
-      </div>
-      <div>
-      Hub: {hub}
-      </div>
+      <StyledBody>
+        <div>
+          <strong>Authentication Types:</strong> {authTypes && authTypes.join(', ')}
+        </div>
+        <div>
+          <strong>Hub:</strong> {hub}
+        </div>
+      </StyledBody>
     </StyledTextWrapper>
   </StyledWrapper>
 );

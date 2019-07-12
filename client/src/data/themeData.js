@@ -4,4 +4,6 @@ export const themeData = {
   lineHeightMedium: '1.4rem',
   spacingMedium: '1rem',
   spacingLarge: '2rem',
+
+  navbarHeight: '40px',
 };

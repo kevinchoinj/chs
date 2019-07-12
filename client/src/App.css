@@ -2,3 +2,11 @@ body {
   font-size: .9rem;
   font-family: 'Open Sans', Helvetica, sans-serif;
 }
+a{
+  color: #4d82bf;
+  text-decoration: none;
+  transition: .2s ease;
+}
+a:hover {
+  color: #335d8d;
+}
