@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
-  margin: ${props => `${props.theme.spacingLarge} 0px`};
+  margin-bottom: ${props => `${props.theme.spacingLarge}`};
 `;
 const StyledHeader = styled.div`
   font-weight: 700;

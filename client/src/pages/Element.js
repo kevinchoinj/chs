@@ -21,6 +21,9 @@ const StyledContainer = styled.div`
 const StyledDescript = styled.div`
   display: flex;
   width: 100%;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 const Element = ({match}) => {

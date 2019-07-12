@@ -6,8 +6,8 @@ const StyledWrapper = styled.div`
 `;
 const StyledContainer = styled.div`
   display: flex;
-  margin-bottom: ${props => props.theme.spacingMedium};
   align-items: center;
+  flex-wrap: wrap;
 `;
 const StyledTitle = styled.div`
   font-weight: 700;
@@ -16,13 +16,13 @@ const StyledTitle = styled.div`
 const StyledResource = styled.div`
   color: #fff;
   background-color: ${props => props.color}
-  margin-right: .5rem;
   padding: 3px;
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 3px;
+  margin: .5rem .5rem .5rem 0px;
 `;
 const Resources = ({resources}) => {
   return (
