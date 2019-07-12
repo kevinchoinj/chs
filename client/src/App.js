@@ -4,10 +4,13 @@ import Home from 'pages/Home';
 import Element from 'pages/Element';
 import Navigation from 'components/Navigation';
 import {ElementsProvider} from 'contexts/ElementsContext';
+import {themeData} from 'data/themeData';
+import {ThemeProvider} from 'styled-components';
+import 'App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <ThemeProvider theme={themeData}>
       <ElementsProvider>
         <Navigation/>
         <Switch>
@@ -18,7 +21,7 @@ const App = () => {
           <Route path="/" render={props => <Home {...props}/>}/>
         </Switch>
       </ElementsProvider>
-    </div>
+    </ThemeProvider>
   );
 }
 

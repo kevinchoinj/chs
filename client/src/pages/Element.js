@@ -1,8 +1,27 @@
 import React, {useEffect, useState, useContext, useMemo} from 'react';
+import styled from 'styled-components';
 import {ElementsContext} from 'contexts/ElementsContext';
 import {elementData} from 'data/elementData';
 import Resources from 'components/Resources';
 import Features from 'components/Features';
+import ElementHeader from 'components/ElementHeader';
+import Description from 'components/Description';
+import VendorInformation from 'components/VendorInformation';
+
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 0px 2rem;
+  box-sizing: border-box;
+`;
+const StyledContainer = styled.div`
+  width: 100%;
+  max-width: 1280px;
+`;
+const StyledDescript = styled.div`
+  display: flex;
+  width: 100%;
+`;
 
 const Element = ({match}) => {
   const {state, dispatch} = useContext(ElementsContext);
@@ -40,32 +59,28 @@ const Element = ({match}) => {
   }, [state.elements, id]);
 
   return (
-   <div>
-     <div onClick={() => console.log(state)}>
-      {displayData.id}
-      asdf
-     </div>
-     <div>
-      {displayData.name}
-    </div>
-    <div>
-      {displayData.authTypes}
-    </div>
-    <div>
-     {displayData.hub}
-    </div>
-    <div>
-      {displayData.description}
-    </div>
-    <Features
-      bulkUpload={displayData.bulkUpload}
-      bulkDownload={displayData.bulkDownload}
-      events={displayData.events}
-      extendable={displayData.extendable}
-    />
-    <Resources resources={displayData.resources}/>
-   </div>
-  )
-}
+    <StyledWrapper>
+      <StyledContainer>
+        <ElementHeader
+          name={displayData.name}
+          image={displayData.image}
+          authTypes={displayData.authTypes}
+          hub={displayData.hub}
+        />
+        <StyledDescript>
+          <Description description={displayData.description}/>
+          <VendorInformation vendorInformation={displayData.vendorInformation}/>
+        </StyledDescript>
+        <Features
+          bulkUpload={displayData.bulkUpload}
+          bulkDownload={displayData.bulkDownload}
+          events={displayData.events}
+          extendable={displayData.extendable}
+        />
+        <Resources resources={displayData.resources}/>
+      </StyledContainer>
+   </StyledWrapper>
+  );
+};
 
 export default Element;

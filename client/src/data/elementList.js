@@ -7,4 +7,8 @@ export const elementList = [
     id: 6,
     name: 'SendGrid',
   },
+  {
+    id: 43,
+    name: 'Hubspot Marketing',
+  },
 ];

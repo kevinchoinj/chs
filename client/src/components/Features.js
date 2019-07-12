@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
-  margin: 2rem 0px;
+  margin: ${props => `${props.theme.spacingLarge} 0px`};
 `;
-
+const StyledHeader = styled.div`
+  font-weight: 700;
+  font-size: ${props => props.theme.sizeLarge}
+  margin-bottom: ${props => props.theme.spacingMedium};
+`;
 const Features = ({
   bulkUpload,
   bulkDownload,
@@ -13,9 +17,9 @@ const Features = ({
 }) => {
   return (
    <StyledWrapper>
-     <div>
+     <StyledHeader>
        Features
-     </div>
+     </StyledHeader>
      <div>
         {bulkUpload ? <div>bulk upload</div> : <div>no bulk upload</div>}
         {bulkDownload ? <div>bulk download</div> : <div>no bulk download</div>}
