@@ -36,27 +36,20 @@ const Element = ({match}) => {
   
   useEffect(() => {
     //api request here
-    dispatch({
-      type: 'RECEIVE_ELEMENT_DATA', 
-      keyValue: id, 
-      payload: elementData.find(value => value.id === parseInt(id))
-    });
-  }, [id, dispatch]);
+    if (!state.elements[id]) {
+      console.log('fetch');
+      dispatch({
+        type: 'RECEIVE_ELEMENT_DATA', 
+        keyValue: id, 
+        payload: elementData.find(value => value.id === parseInt(id))
+      });
+    }
+  }, [id, dispatch, state]);
   
-  //simulate lag on fetching data
-  /*
-  useEffect(() => {
-    setTimeout(() => dispatch({
-      type: 'RECEIVE_ELEMENT_DATA', 
-      keyValue: id, 
-      payload: elementData.find(value => value.id === parseInt(id))
-    }), 2000);
-  }, [id, dispatch]);
-  */
-
   useEffect(() => {
     //triggers twice, once on mount and once on reducer update
     if (state.elements[id]) {
+      console.log('update');
       setDisplayData(state.elements[id]);
     }
   }, [state.elements, id]);

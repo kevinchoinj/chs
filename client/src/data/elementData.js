@@ -81,7 +81,7 @@ export const elementData = [
         ]
       },
       {
-        name: 'fields',
+        name: 'groups',
         actions: [
           'get',
           'get by ID',
